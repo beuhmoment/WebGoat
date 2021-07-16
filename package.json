@@ -1,0 +1,32 @@
+{
+  "name": "cucumber-convert",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "junit-report-builder": "1.3.3",
+    "jsonfile": "5.0.0"
+  },
+  "scripts": {
+    "test": "node tests/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlotteHew/cucumber-junit-convert.git"
+  },
+  "keywords": [
+    "cucumber",
+    "cucumberjs",
+    "junit"
+  ],
+  "author": {
+    "name": "Zbynek Nevrly",
+    "email": "znevrly@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/znevrly/cucumber-junit-convert/issues"
+  },
+  "homepage": "https://github.com/znevrly/cucumber-junit-convert#readme"
+}
