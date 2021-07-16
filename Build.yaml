@@ -1,0 +1,26 @@
+---
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+     java: corretto11
+    commands:
+      - apt-get update -y
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 109974893428.dkr.ecr.ap-southeast-1.amazonaws.com
+      - docker pull 489478819445.dkr.ecr.us-west-2.amazonaws.com/amazoncorretto:15
+      - docker run -it 489478819445.dkr.ecr.us-west-2.amazonaws.com/amazoncorretto:15 /bin/bash
+      - apt-get install -y maven   
+      
+        
+  build:
+    commands:
+      - FROM amazoncorretto:15
+      - git clone https://github.com/beuhmoment/WebGoat.git
+      - cd WebGoat
+      - mvn clean install
+      
+artifacts: 
+  files: 
+   - webgoat_version=8.2.0-SNAPSHOT
+  discard-paths: yes
