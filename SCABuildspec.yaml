@@ -18,19 +18,19 @@ phases:
       - mkdir -p nvd  # Will store nvd here
       - pwd
       - ls -l
-      - ./dependency-check/bin/dependency-check.sh --project musician-app --scan package-lock.json --out .
-      - ls
+      - ./dependency-check/bin/dependency-check.sh --project my-project -s . -f JUNIT
 # Caching the nvd database so each run doesn't download the
 # entire nvd
 cache:
   paths:
     - nvd/**/*
 reports:
-  musician-test:
+  WebGoat-TestGroup:
     files:
-      - dependency-check-report.html
+      - dependency-check-junit.xml
     discard-paths: 'yes'
-
+    file-format: JunitXml
 artifacts: 
   files: 
   - './dependency-check-report.html'
+  - '*junit.xml'
