@@ -7,8 +7,7 @@ phases:
      java: corretto11
     commands:
 # Installing Insider CLI to do SAST Check
-      - echo Installing Insider CLI - `pwd`  
-      - go get github.com/insidersec/insider/cmd/insider      
+      - echo Installing Insider CLI - `pwd`     
       - wget https://github.com/insidersec/insider/releases/download/2.1.0/insider_2.1.0_linux_x86_64.tar.gz
       - tar -xf insider_2.1.0_linux_x86_64.tar.gz    
       - chmod +x insider
